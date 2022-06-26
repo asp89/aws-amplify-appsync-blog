@@ -1,7 +1,33 @@
-import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
+import { useState, useEffect } from "react";
+import { API } from "aws-amplify";
+import { listPosts } from "./../src/graphql/queries";
 
-export default function Home() {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
-}
+const home = () => {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const postData = await API.graphql({
+        query: listPosts,
+      });
+      setPosts(postData.data.listPosts.items);
+    };
+    fetchPosts();
+  }, []);
+
+  const renderPosts = () => {
+    if (posts.length === 0) return;
+
+    return posts.map((post, index) => <p key={index}>{post.title}</p>);
+  };
+
+  return (
+    <div>
+      <h1 className="text-sky-400 text-6xl font-bold underline">My Posts</h1>
+      {/* Render Posts */}
+      {renderPosts()}
+    </div>
+  );
+};
+
+export default home;
