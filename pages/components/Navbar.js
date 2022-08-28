@@ -14,16 +14,16 @@ const menuItems = [
     url: "/create-post",
     authRequired: false,
   },
-  {
-    name: "Profile",
-    url: "/profile",
-    authRequired: false,
-  },
-  {
-    name: "My Post",
-    url: "/profile",
-    authRequired: true,
-  },
+  // {
+  //   name: "Profile",
+  //   url: "/profile",
+  //   authRequired: false,
+  // },
+  // {
+  //   name: "My Post",
+  //   url: "/profile",
+  //   authRequired: true,
+  // },
 ];
 
 const NavBar = () => {

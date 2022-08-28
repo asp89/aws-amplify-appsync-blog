@@ -24,7 +24,6 @@ const home = () => {
   return (
     <div>
       <h1 className="text-sky-400 text-6xl font-bold underline">My Posts</h1>
-      {/* Render Posts */}
       {renderPosts()}
     </div>
   );
