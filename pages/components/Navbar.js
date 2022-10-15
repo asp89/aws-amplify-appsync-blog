@@ -19,11 +19,11 @@ const menuItems = [
   //   url: "/profile",
   //   authRequired: false,
   // },
-  // {
-  //   name: "My Post",
-  //   url: "/profile",
-  //   authRequired: true,
-  // },
+  {
+    name: "My Post",
+    url: "/my-posts",
+    authRequired: true,
+  },
 ];
 
 const NavBar = () => {

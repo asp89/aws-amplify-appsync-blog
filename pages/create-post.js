@@ -1,6 +1,6 @@
 import { withAuthenticator } from "@aws-amplify/ui-react";
-import { useState, useRef, React } from "react";
-import { API } from "aws-amplify";
+import { Auth, API } from "aws-amplify";
+import { useState, React } from "react";
 import { useRouter } from "next/router";
 import { v4 as uuid } from "uuid";
 import { createPost } from "../src/graphql/mutations";
@@ -29,12 +29,15 @@ const CreatePost = () => {
     const id = uuid();
     post.id = id;
 
+    const { username } = await Auth.currentAuthenticatedUser();
+    post.username = username;
+
     await API.graphql({
       query: createPost,
       variables: { input: post },
       authMode: "AMAZON_COGNITO_USER_POOLS",
     });
-    // router.push(`/post/${id}`);
+    router.push(`/posts/${id}`);
   };
 
   return (

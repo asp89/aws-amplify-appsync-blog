@@ -8667,6 +8667,19 @@
   dependencies:
     "minimist" "^1.2.6"
 
+"moment@^2.19.3":
+  "integrity" "sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w=="
+  "resolved" "https://registry.npmjs.org/moment/-/moment-2.29.4.tgz"
+  "version" "2.29.4"
+
+"momento@^0.2.0":
+  "integrity" "sha512-nIuBJ0hbUtyx+64LOSV+Bt53bQ3/YFvLx7VmPoTzXT0CBpFJdN5einKfUG0SMOpfSFFDQDh5Yjc1/k0082IwCw=="
+  "resolved" "https://registry.npmjs.org/momento/-/momento-0.2.0.tgz"
+  "version" "0.2.0"
+  dependencies:
+    "moment" "^2.19.3"
+    "ramda" "^0.25.0"
+
 "mri@^1.1.0":
   "integrity" "sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA=="
   "resolved" "https://registry.npmjs.org/mri/-/mri-1.2.0.tgz"
@@ -9428,6 +9441,11 @@
   "integrity" "sha512-RKJ22hX8mHe3Y6wH/N3wCM6BWtjaxIyyUIkpHOvfFnxdI4yD4tBXEBKSbriGujF6jnSVkJrffuo6vxACiSSxIw=="
   "resolved" "https://registry.npmjs.org/quickselect/-/quickselect-2.0.0.tgz"
   "version" "2.0.0"
+
+"ramda@^0.25.0":
+  "integrity" "sha512-GXpfrYVPwx3K7RQ6aYT8KPS8XViSXUVJT1ONhoKPE9VAleW42YE+U+8VEyGWt41EnEQW7gwecYJriTI0pKoecQ=="
+  "resolved" "https://registry.npmjs.org/ramda/-/ramda-0.25.0.tgz"
+  "version" "0.25.0"
 
 "range-parser@~1.2.1":
   "integrity" "sha512-Hrgsx+orqoygnmhFbKaHE6c296J+HTAQXoxEF6gNupROmmGJRoyzfG3ccAveqCBrwr/2yxQ5BVd/GTl5agOwSg=="
