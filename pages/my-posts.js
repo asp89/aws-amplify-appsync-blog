@@ -20,6 +20,15 @@ export default function MyPosts() {
     setPosts(postData.data.postsByUsername.items);
   };
 
+  const deletePost = async (id) => {
+    await API.graphql({
+      query: deletePostMutation,
+      variables: { input: { id } },
+      authMode: "AMAZON_COGNITO_USER_POOLS",
+    });
+    await fetchPosts();
+  };
+
   const renderPosts = () => {
     if (posts.length === 0) return;
 
@@ -79,9 +88,5 @@ export default function MyPosts() {
     );
   };
 
-  return (
-    <>
-      {renderPosts()}
-    </>
-  );
+  return <>{renderPosts()}</>;
 }
