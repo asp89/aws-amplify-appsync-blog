@@ -1,0 +1,16 @@
+{
+  "resourceName": "postImages",
+  "policyUUID": "c04727bf",
+  "bucketName": "amplifyappasyncblogdb4ac79e569e4380bb254bfea0b9",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}

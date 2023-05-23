@@ -1,4 +1,4 @@
-import { Auth, API } from "aws-amplify";
+import { Auth, API, Storage } from "aws-amplify";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { postsByUsername } from "../src/graphql/queries";
@@ -7,6 +7,8 @@ import { deletePost as deletePostMutation } from "../src/graphql/mutations";
 
 export default function MyPosts() {
   const [posts, setPosts] = useState([]);
+  const [post, setPost] = useState([]);
+
   useEffect(() => {
     fetchPosts();
   }, []);
@@ -17,7 +19,19 @@ export default function MyPosts() {
       query: postsByUsername,
       variables: { username },
     });
-    setPosts(postData.data.postsByUsername.items);
+
+    const { items } = postData.data.postsByUsername;
+    //Fetch images from S3 for posts that contain a cover image
+    const postsWithImages = await Promise.all(
+      items.map(async (post) => {
+        if (post.coverImage) {
+          post.coverImage = await Storage.get(post.coverImage);
+        }
+        return post;
+      })
+    );
+    setPosts(postsWithImages);
+    // setPosts(postData.data.postsByUsername.items);
   };
 
   const deletePost = async (id) => {

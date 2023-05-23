@@ -13,7 +13,14 @@
     },
     "categories": {
       "auth": {
-        "amplifyappasyncblog47634997": {}
+        "amplifyappasyncblog47634997": {},
+        "true": {}
+      },
+      "api": {
+        "amplifyappasyncblog": {}
+      },
+      "storage": {
+        "postImages": {}
       }
     }
   }
